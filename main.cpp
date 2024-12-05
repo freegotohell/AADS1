@@ -14,7 +14,9 @@ int main() {
 		auto sum_2 = scalar + img1;
 
 		auto diff_1 = img1 - img2;
-		auto diff_2 = scalar - img1;
+		auto diff_2 = img1 - scalar;
+		auto diff_3 = scalar - img1;
+
 
 		auto product_1 = img1 * img2;
 		auto product_2 = img1 * 10;
@@ -22,9 +24,10 @@ int main() {
 		std::cout << "image 1\n" << img1;
 		std::cout << "\nimage 2\n" << img2;
 		std::cout << "\nsum of images\n" << sum_1;
-		std::cout << "\nsum of number and image 1\n" << sum_2;
+		std::cout << "\nsum of image 1 and number\n" << sum_2;
 		std::cout << "\ndifference of images\n" << diff_1;
-		std::cout << "\ndifference of number and image 1\n" << diff_2;
+		std::cout << "\ndifference of image 1 and number\n" << diff_2;
+		std::cout << "\ndifference of number and image 1\n" << diff_3;
 		std::cout << "\nproduct of images\n" << product_1;
 		std::cout << "\nproduct of number and image 1\n" << product_2;
 		std::cout << "\ninverted image 1\n" << !img1;

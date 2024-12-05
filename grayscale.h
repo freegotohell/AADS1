@@ -307,40 +307,13 @@ public:
 };
 
 template <typename T>
-Grayscale<T> operator+(const T scalar, const Grayscale<T>& img) {
-	T max = std::numeric_limits<T>::max();
-
-	Grayscale<T> res(img.get_width(), img.get_height());
-
-	for (size_t y = 0; y < img.get_height(); ++y) {
-		for (size_t x = 0; x < img.get_width(); ++x) {
-			if (img(x, y) > max - scalar) {
-				res(x, y) = max;
-			}
-			else {
-				res(x, y) = scalar + img(x, y);
-			}
-		}
-	}
-	return res;
+Grayscale<T> operator+(T scalar, Grayscale<T>& img) {
+	return img + scalar;
 }
 
 template <typename T>
-Grayscale<T> operator-(const T scalar, const Grayscale<T>& img) {
-	T min = std::numeric_limits<T>::min();
-	Grayscale<T> res(img.get_width(), img.get_height());
-
-	for (size_t y = 0; y < img.get_height(); ++y) {
-		for (size_t x = 0; x < img.get_width(); ++x) {
-			if (img(x, y) < min + scalar) {
-				res(x, y) = min;
-			}
-			else {
-				res(x, y) = scalar - img(x, y);
-			}
-		}
-	}
-	return res;
+Grayscale<T> operator-(T scalar, Grayscale<T>& img) {
+	return !(img-scalar);
 }
 
 template <typename T>

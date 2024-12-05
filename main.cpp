@@ -40,7 +40,6 @@ int main() {
 		size_t x1, y1;
 		size_t x2, y2;
 
-		
 		std::cout << "\nenter top left point ";
 		std::cin >> x1 >> y1;
 

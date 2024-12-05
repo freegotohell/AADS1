@@ -295,17 +295,17 @@ public:
 	size_t get_width() const {
 		return _width;
 	}
-
-
-	void draw_rectangle(size_t x1, size_t y1, size_t x2, size_t y2, T fill_value) {
-		for (size_t y = std::min(y1, y2); y <= std::max(y1, y2); ++y) {
-			for (size_t x = std::min(x1, x2); x <= std::max(x1, x2); ++x) {
-					(*this)(x, y) = fill_value;
+};
+template <typename T>
+void draw_rectangle(Grayscale<short>& img, size_t x1, size_t y1, size_t x2, size_t y2, T fill_value) {
+	for (size_t y = std::min(y1, y2); y <= std::max(y1, y2); ++y) {
+		for (size_t x = std::min(x1, x2); x <= std::max(x1, x2); ++x) {
+			if (x < img.get_width() && y < img.get_height()) {
+				img(x, y) = fill_value;
 			}
 		}
 	}
-};
-
+}
 template <typename T>
 Grayscale<T> operator+(T scalar, Grayscale<T>& img) {
 	return img + scalar;

@@ -40,6 +40,7 @@ int main() {
 		size_t x1, y1;
 		size_t x2, y2;
 
+		
 		std::cout << "\nenter top left point ";
 		std::cin >> x1 >> y1;
 
@@ -49,7 +50,7 @@ int main() {
 		std::cout << "\nenter number for filling ";
 		std::cin >> fill;
 
-		img3.draw_rectangle(x1, y1, x2, y2, fill);
+		draw_rectangle(img3, x1, y1, x2, y2, fill);
 
 		std::cout << img3;
 	}
